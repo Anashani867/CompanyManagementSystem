@@ -8,9 +8,9 @@ This is a backend system designed using Clean Architecture principles. It manage
 ## 📁 Project Structure
 
 - API – ASP.NET Core Web API (Controllers, Program.cs)
-- Core – Contains Entities, Interfaces, DTOs
+- Core – Contains Entities, Interfaces
 - Infrastructure – EF Core DbContext, Repositories
-- Application – Business logic, Services
+- Application – Business logic, Services, DTOs
 
 ---
 
