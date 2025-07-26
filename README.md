@@ -92,8 +92,4 @@ GET /api/employeeproject/employee-total-hours (Admin)
 - Clean Architecture
 - Swagger / Swashbuckle
 
----
 
-## 🙌 Author
-
-Generated in collaboration with OpenAI.
