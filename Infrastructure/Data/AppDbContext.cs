@@ -18,6 +18,10 @@ namespace Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<EmployeeProject>()
+            .HasQueryFilter(ep => !ep.Employee.IsDeleted && !ep.Project.IsDeleted);
+
+
+            modelBuilder.Entity<EmployeeProject>()
                 .HasKey(ep => new { ep.EmployeeId, ep.ProjectId });
 
             modelBuilder.Entity<EmployeeProject>()
@@ -37,7 +41,7 @@ namespace Infrastructure.Data
 
 
             modelBuilder.Entity<UserRole>()
-       .HasKey(ur => new { ur.UserId, ur.RoleId });
+               .HasKey(ur => new { ur.UserId, ur.RoleId });
 
             modelBuilder.Entity<UserRole>()
                 .HasOne(ur => ur.User)

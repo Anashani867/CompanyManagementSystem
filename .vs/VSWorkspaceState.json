@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Application",
-    "\\Application\\DTOs",
-    "\\Application\\Services",
+    "\\API",
+    "\\API\\Controllers",
+    "\\API\\Controllers\\Auth",
     "\\Core",
     "\\Core\\Entities",
     "\\Core\\Interfaces",
+    "\\Core\\Interfaces\\Auth",
     "\\Infrastructure",
-    "\\Infrastructure\\Data",
-    "\\Infrastructure\\Repositories"
+    "\\Infrastructure\\Data"
   ],
-  "SelectedNode": "\\Infrastructure\\Repositories\\EmployeeRepository.cs",
+  "SelectedNode": "\\API\\Controllers\\Auth\\AuthController.cs",
   "PreviewInSolutionExplorer": false
 }
