@@ -3,6 +3,8 @@
 ## ✅ Overview
 This is a backend system designed using Clean Architecture principles. It manages employees, projects, and their assignments with hours, along with secure authentication and role-based authorization.
 
+🔍 Swagger UI: Enabled with bearer token authentication
+
 ---
 
 ## 📁 Project Structure
@@ -18,7 +20,7 @@ This is a backend system designed using Clean Architecture principles. It manage
 
 ### ✅ Part 1: CRUD & Reporting
 
-| Feature                                    | Status |
+|🧩 Feature                                 | ✅ Status |
 |-------------------------------------------|--------|
 | Employee CRUD                             | ✅     |
 | Project CRUD                              | ✅     |
@@ -29,7 +31,7 @@ This is a backend system designed using Clean Architecture principles. It manage
 
 ### 🔐 Part 2: Authentication & Authorization
 
-| Feature                                    | Status |
+| 🧩 Feature                                 | ✅ Status |
 |-------------------------------------------|--------|
 | JWT Login                                 | ✅     |
 | Role-Based Access (Admin, User)           | ✅     |
@@ -57,6 +59,7 @@ dotnet ef database update --project Infrastructure --startup-project API
 dotnet run --project API
 
 Swagger UI: https://localhost:{PORT}/swagger
+📌 Default port is usually `5001` for HTTPS
 
 ---
 
