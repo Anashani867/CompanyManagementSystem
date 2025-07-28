@@ -47,26 +47,6 @@ namespace Application.Services
         }
 
 
-        //public async Task<bool> AssignToProjectAsync(EmployeeProjectDto dto)
-        //{
-        //    var employee = await _employeeRepository.GetByIdAsync(dto.EmployeeId);
-        //    var project = await _projectRepository.GetByIdAsync(dto.ProjectId);
-
-        //    if (employee == null || project == null || employee.IsDeleted || project.IsDeleted)
-        //        return false;
-
-        //    var assignment = new EmployeeProject
-        //    {
-        //        EmployeeId = dto.EmployeeId,
-        //        ProjectId = dto.ProjectId,
-        //        AssignedHours = dto.AssignedHours
-        //    };
-
-        //    await _repository.AddAsync(assignment);
-        //    await _repository.SaveChangesAsync();
-
-        //    return true;
-        //}
 
 
         public async Task<IEnumerable<EmployeeDto>> GetEmployeesByProjectIdAsync(int projectId)
@@ -124,27 +104,6 @@ namespace Application.Services
             };
         }
         
-
-        //public async Task<IEnumerable<EmployeeWithProjectsDto>> GetAllEmployeesWithProjectsAsync()
-        //{
-        //    var assignments = await _repository.GetAllWithEmployeesAndProjectsAsync();
-
-        //    var grouped = assignments
-        //        .GroupBy(ep => ep.Employee)
-        //        .Select(g => new EmployeeWithProjectsDto
-        //        {
-        //            EmployeeId = g.Key.Id,
-        //            Name = g.Key.Name,
-        //            Projects = g.Select(ep => new ProjectAssignmentDto
-        //            {
-        //                Id = ep.Project.Id,
-        //                Title = ep.Project.Title,
-        //                AssignedHours = ep.AssignedHours
-        //            }).ToList()
-        //        });
-
-        //    return grouped;
-        //}
 
 
         public async Task<PagedResultDto<EmployeeWithProjectsDto>> GetAllEmployeesWithProjectsAsync(PagedRequestDto request)

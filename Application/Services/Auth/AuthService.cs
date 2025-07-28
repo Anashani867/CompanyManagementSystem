@@ -1,11 +1,11 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
+﻿using System.IdentityModel.Tokens.Jwt;//لإنشاء وتوليد توكن JWT
+using System.Security.Claims;//لإضافة Claims (مثل اسم المستخدم والدور) داخل التوكن
+using System.Security.Cryptography;//لتشفير/تحقق من كلمة المرور
+using System.Text;//لتحويل النصوص إلى بايتات عند التشفير
 using Core.Entities;
 using Core.Interfaces;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;//للوصول إلى الإعدادات من appsettings.json
+using Microsoft.IdentityModel.Tokens;//لبناء التوكن وتوقيعه
 using Application.DTOs;
 
 public class AuthService : IAuthService
@@ -48,6 +48,15 @@ public class AuthService : IAuthService
         {
             claims.Add(new Claim(ClaimTypes.Role, role.Role.Name));
         }
+
+
+        //var roleName = user.UserRoles.FirstOrDefault()?.Role?.Name;
+
+        //if (!string.IsNullOrEmpty(roleName))
+        //{
+        //    claims.Add(new Claim(ClaimTypes.Role, roleName));
+        //}
+
         var jwtKey = _config["Jwt:Key"] ?? throw new InvalidOperationException("JWT key not found in configuration.");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
