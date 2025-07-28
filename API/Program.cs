@@ -87,7 +87,7 @@ builder.Services.AddScoped<EmployeeProjectService>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-builder.Services.AddScoped<IAuthRepository, AuthService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 
 

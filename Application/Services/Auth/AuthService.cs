@@ -7,9 +7,8 @@ using Core.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Application.DTOs;
-using Microsoft.EntityFrameworkCore;
 
-public class AuthService : IAuthRepository
+public class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
     private readonly IConfiguration _config;

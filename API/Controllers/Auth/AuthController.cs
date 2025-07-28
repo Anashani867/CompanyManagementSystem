@@ -9,18 +9,18 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthRepository _authRepository;
+        private readonly IAuthService _authService;
 
-        public AuthController(IAuthRepository authRepository)
+        public AuthController(IAuthService authService)
         {
-            _authRepository = authRepository;
+            _authService = authService;
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
             // ✅ تأكد أنك تمرر كل المطلوب
-            var token = await _authRepository.LoginAsync(dto.Username, dto.Password);
+            var token = await _authService.LoginAsync(dto.Username, dto.Password);
 
             if (token == null)
                 return Unauthorized("Invalid credentials");
