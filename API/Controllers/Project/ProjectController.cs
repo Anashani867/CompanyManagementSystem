@@ -54,9 +54,9 @@ namespace API.Controllers
 		{
 			var deleted = await _service.DeleteAsync(id);
 			if (!deleted)
-				return NotFound("الموظف غير موجود أو تم حذفه مسبقًا");
+                return NotFound("The employee does not exist or has already been deleted.");
 
-			return Ok("تم الحذف (Soft Delete) بنجاح");
+            return Ok("The record has been soft deleted successfully.");
 		}
 	}
 }
