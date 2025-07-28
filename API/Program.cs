@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
 using Infrastructure.Repositories;
 using Application.Services;
+using System.Security.Claims;
 using Microsoft.OpenApi.Models;//
 using Core.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
