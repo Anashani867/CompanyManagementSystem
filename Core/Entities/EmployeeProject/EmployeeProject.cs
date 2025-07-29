@@ -10,3 +10,4 @@ namespace Core.Entities
 
         public int AssignedHours { get; set; }
     }
+}
