@@ -12,7 +12,7 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task<User> GetByUsernameAsync(string username)
+    public async Task<User?> GetByUsernameAsync(string username)
     {
         return await _context.Users
             .Include(u => u.UserRoles)

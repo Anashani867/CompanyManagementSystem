@@ -50,7 +50,7 @@ namespace Application.Services
         public async Task<EmployeeDto?> UpdateAsync(UpdateEmployeeDto dto)
         {
             var employee = await _repository.GetByIdAsync(dto.Id);
-            if (employee == null) return null;
+            if (employee is null) return null;
 
             employee.Name = dto.Name;
             await _repository.UpdateAsync(employee);

@@ -19,7 +19,7 @@ public class AuthService : IAuthService
         _config = config;
     }
 
-    public async Task<string> LoginAsync(string username, string password)
+    public async Task<string?> LoginAsync(string username, string password)
     {
         var user = await _userRepository.GetByUsernameAsync(username);
 
