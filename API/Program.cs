@@ -154,7 +154,6 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 
 }
 
-app.UseHttpsRedirection();
 
 
 
