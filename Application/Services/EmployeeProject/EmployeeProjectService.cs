@@ -31,7 +31,7 @@ namespace Application.Services
             // 🔍 تحقق قبل الإضافة
             var exists = await _repository.ExistsAsync(dto.EmployeeId, dto.ProjectId);
             if (exists)
-                return false; // أو حدّث الساعات لو حاب
+                return false;
 
             var assignment = new EmployeeProject
             {
